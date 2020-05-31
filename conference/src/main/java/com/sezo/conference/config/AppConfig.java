@@ -15,8 +15,11 @@ public class AppConfig {
 	@Bean(name = "speakerService")
 	@Scope(value="singleton")
 	public SpeakerService getSpeakerService() {
-		SpeakerServiceImpl service =	new SpeakerServiceImpl();
-		service.setSpeakerRepository(getSpeakerRepository());
+		 //constructor injection
+		SpeakerServiceImpl service =	new SpeakerServiceImpl(getSpeakerRepository());
+		
+		//Setter injection
+		//service.setSpeakerRepository(getSpeakerRepository()); 
 		return service;
 	}
 	

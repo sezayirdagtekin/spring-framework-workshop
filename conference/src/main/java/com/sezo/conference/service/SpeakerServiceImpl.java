@@ -14,7 +14,14 @@ import com.sezo.conference.repository.SpeakerRepositoryImpl;
 public class SpeakerServiceImpl implements SpeakerService {
 
 	private SpeakerRepository speakerRepository;
+	
+	//constructor injection
+	public SpeakerServiceImpl ( SpeakerRepository repository){
+		this.speakerRepository=repository;
+		
+	}
 
+	//Setter injection
 	public void setSpeakerRepository(SpeakerRepository speakerRepository) {
 		this.speakerRepository = speakerRepository;
 	}
