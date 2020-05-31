@@ -13,12 +13,16 @@ import com.sezo.conference.repository.SpeakerRepositoryImpl;
  */
 public class SpeakerServiceImpl implements SpeakerService {
 
-	private SpeakerRepository speakerRepository = new SpeakerRepositoryImpl();
+	private SpeakerRepository speakerRepository;
 
+	public void setSpeakerRepository(SpeakerRepository speakerRepository) {
+		this.speakerRepository = speakerRepository;
+	}
 
 	@Override
 	public List<Speaker> findAll() {
 		return speakerRepository.findAll();
 
 	}
+
 }
