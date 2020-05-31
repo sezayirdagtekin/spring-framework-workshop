@@ -2,6 +2,8 @@ package com.sezo.conference.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.sezo.conference.model.Speaker;
 import com.sezo.conference.repository.SpeakerRepository;
 import com.sezo.conference.repository.SpeakerRepositoryImpl;
@@ -14,16 +16,12 @@ import com.sezo.conference.repository.SpeakerRepositoryImpl;
 public class SpeakerServiceImpl implements SpeakerService {
 
 	private SpeakerRepository speakerRepository;
-	
-	//constructor injection
-	public SpeakerServiceImpl ( SpeakerRepository repository){
-		this.speakerRepository=repository;
-		
-	}
 
-	//Setter injection
-	public void setSpeakerRepository(SpeakerRepository speakerRepository) {
-		this.speakerRepository = speakerRepository;
+	// constructor injection
+	public SpeakerServiceImpl(SpeakerRepository repository) {
+		System.out.println("Constructor injection...");
+		this.speakerRepository = repository;
+
 	}
 
 	@Override
